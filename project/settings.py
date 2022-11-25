@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-buz(13pzp_uzr+pe9un2$mv9a1kl+0b=ibcf6@qp!xqgtaez*c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = True
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -149,4 +149,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ORIGIN_ALLOW_ALL = True
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
