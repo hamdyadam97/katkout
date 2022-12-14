@@ -1,4 +1,5 @@
 from rest_framework.generics import CreateAPIView
+from rest_framework.permissions import IsAdminUser
 from rest_framework_simplejwt.views import TokenObtainPairView
 from user import serializer
 from user.models import User
@@ -19,11 +20,11 @@ from drf_yasg.utils import swagger_auto_schema
     ],
 ))
 class SignupView(CreateAPIView):
+    permission_classes = [IsAdminUser]
     serializer_class = serializer.SignupSerializer
 
     def post(self, request, *args, **kwargs):
         user = User.objects.filter(email__iexact=request.data.get('email', ''))
-        print(request.data)
         return self.create(request, *args, **kwargs)
 
 

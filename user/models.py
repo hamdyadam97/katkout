@@ -11,12 +11,6 @@ from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 from rest_framework_simplejwt.tokens import RefreshToken
 
-# from notifications.tasks import send_email
-# from api.utils import random_selected_model
-
-
-from django.conf import settings
-
 
 class UserManager(DjangoUserManager):
     def get_by_natural_key(self, username):

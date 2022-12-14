@@ -7,11 +7,8 @@ from user.models import User
 from django.utils.translation import gettext_lazy as _
 
 
-
-
 class SignupSerializer(serializers.ModelSerializer):
     is_update = False
-
     refresh = serializers.CharField(read_only=True, source='token')
     access = serializers.CharField(read_only=True, source='token.access_token')
     avatar = serializers.ImageField(required=False,)

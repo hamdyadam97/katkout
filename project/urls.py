@@ -24,12 +24,10 @@ schema_view = get_schema_view(
 )
 urlpatterns = [
     path('admin/', admin.site.urls),
-
     re_path(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-
     path('', include('user.urls', namespace='user')),
-    # path('client/', include('client.urls', namespace='client')),
-    # path('invoice/', include('invoice.urls', namespace='invoice')),
+    path('client/', include('client.urls', namespace='client')),
+    path('bill/', include('bill.urls', namespace='bill')),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
