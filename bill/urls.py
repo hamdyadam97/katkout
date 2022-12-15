@@ -1,9 +1,9 @@
 from django.urls import path
-from client import views
+from bill import views
 
 app_name = 'bill'
 urlpatterns = [
-    path('', views.bill.as_view(), name='create-bill'),
-    path('<slug:client_slug>/', views.ClientViewDetail.as_view(), name='detail-client'),
+    path('', views.BillView.as_view(), name='create-bill'),
+    # path('<slug:client_slug>/', views.ClientViewDetail.as_view(), name='detail-client'),
 
 ]

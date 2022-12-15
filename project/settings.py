@@ -89,26 +89,26 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'd29r4h7eknhc72',
-#        'USER': 'shibnbyhnyzbrf',
-#        'PASSWORD': 'cabff31a904eeb91c4169ee574ead2e54de821d80b745408c489c404ec2d02fa',
-#        'HOST': 'ec2-34-230-153-41.compute-1.amazonaws.com',
-#        'PORT': '5432',
-#    }
-# }
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'veterinarypharmacy',
-       'USER': 'postgres',
-       'PASSWORD': '123',
-       'HOST': 'localhost',
+       'NAME': 'd29r4h7eknhc72',
+       'USER': 'shibnbyhnyzbrf',
+       'PASSWORD': 'cabff31a904eeb91c4169ee574ead2e54de821d80b745408c489c404ec2d02fa',
+       'HOST': 'ec2-34-230-153-41.compute-1.amazonaws.com',
        'PORT': '5432',
    }
 }
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'veterinarypharmacy',
+#        'USER': 'postgres',
+#        'PASSWORD': '123',
+#        'HOST': 'localhost',
+#        'PORT': '5432',
+#    }
+# }
 AUTH_USER_MODEL = 'user.User'
 
 # Password validation
