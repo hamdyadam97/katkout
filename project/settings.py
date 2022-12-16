@@ -90,22 +90,22 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 
-DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'veterinarypharmacy',
-       'USER': 'postgres',
-       'PASSWORD': '123',
-       'HOST': 'localhost',
-       'PORT': '5432',
-   }
-}
 # DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'veterinarypharmacy',
+#        'USER': 'postgres',
+#        'PASSWORD': '123',
+#        'HOST': 'localhost',
+#        'PORT': '5432',
+#    }
+# }
+DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
-# }
+}
 
 AUTH_USER_MODEL = 'user.User'
 
