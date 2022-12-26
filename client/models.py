@@ -3,7 +3,7 @@ import uuid
 
 from django.core.exceptions import ValidationError
 from django.db import models
-
+from autoslug import AutoSlugField
 from client.utils import get_unique_slug
 
 
@@ -21,6 +21,7 @@ def validation_name(name):
     else:
         raise ValidationError('اسم رسمى كما هو فى البطاقة')
 
+    pass
 
 def validation_phone(phone):
     regx = '^01[0125][0-9]{8}$'
@@ -44,12 +45,7 @@ class Client(models.Model):
     phone2 = models.CharField(unique=True, max_length=11, validators=[validation_phone], null=True, blank=True, help_text="رقم الموبايل")
     place = models.CharField(max_length=50, null=True, blank=True, help_text="العنوان")
     img = models.ImageField(upload_to='client/image', default='F:/AppDjango/Katkout/media/client/image/Hamdy.JPG', help_text="الصورة ")
-    slug = models.SlugField(max_length=150, unique=True)
 
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = get_unique_slug(self, 'name', 'slug')
-            super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name

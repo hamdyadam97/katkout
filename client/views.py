@@ -18,9 +18,9 @@ class ClientView(CreateAPIView):
 class ClientViewDetail(RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAuthenticated]
     serializer_class = ClientSerializer
-    lookup_field = 'slug'
-    lookup_url_kwarg = 'client_slug'
-    # queryset = Client.objects.all()
+    lookup_field = 'name'
+    lookup_url_kwarg = 'client_name'
+    queryset = Client.objects.all()
 
     def get_queryset(self):
         return Client.objects.all()
