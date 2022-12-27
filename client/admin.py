@@ -1,4 +1,9 @@
 from django.contrib import admin
 from .models import Client
 
-admin.site.register(Client)
+
+class ClientAdmin(admin.ModelAdmin):
+    readonly_fields = ('id',)
+
+
+admin.site.register(Client, ClientAdmin)
