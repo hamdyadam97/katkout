@@ -20,7 +20,6 @@ from drf_yasg.utils import swagger_auto_schema
     ],
 ))
 class SignupView(CreateAPIView):
-    permission_classes = [IsAdminUser]
     serializer_class = serializer.SignupSerializer
 
     def post(self, request, *args, **kwargs):

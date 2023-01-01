@@ -30,14 +30,14 @@ class BillUpdateDestroy(RetrieveUpdateDestroyAPIView):
         return Bill.objects.all()
 
 
-# @swagger_auto_schema(method='post', request_body=PurchaseOfGoodsSerializer)
+@swagger_auto_schema(method='post', request_body=PurchaseOfGoodsSerializer)
 @api_view(['POST'])
 @permission_classes([IsAuthenticated],)
 def purchase_of_goods(request):
-    if request.method =='POST':
+    if request.method == 'POST':
         purchase_of_goods = PurchaseOfGoodsSerializer(data=request.data)
         if purchase_of_goods.is_valid():
             purchase_of_goods.save()
             return Response(data=purchase_of_goods.data, status=status.HTTP_201_CREATED)
         else:
-            return Response(data={"function must post"},status=status.HTTP_400_BAD_REQUEST)
+            return Response(data={"function must post"}, status=status.HTTP_400_BAD_REQUEST)
